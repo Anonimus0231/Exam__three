@@ -284,3 +284,46 @@ main {
  text-transform: uppercase;
  outline: none;
 }
+
+@media (max-width: 1170px) {
+ .portfolio__box {
+   gap: 15px;
+ }
+ .box__card {
+   width: 177px;
+   height: 177px;
+ }
+}
+
+@media (max-width: 1100px){
+ .myInfo {
+   flex-direction: column;
+ }
+ .myInfo__img {
+   background-position: center;
+   width: auto;
+   margin-bottom: 65px;
+ }
+}
+
+@media (max-width: 900px) {
+ main {
+   padding: 51px 67px;
+ }
+ .myInfo {
+   padding-bottom: 53px;
+ }
+}
+
+@media (max-width: 500px) {
+ .myInfo {
+   padding-bottom: 38px;
+ }
+ main {
+   padding: 51px 17px;
+ }
+ .box__card {
+   width: 160px;
+   height: 160px;
+ }
+}
