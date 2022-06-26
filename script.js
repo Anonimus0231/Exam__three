@@ -1,3 +1,4 @@
+//================CLASIC MODAL WINDOW================================================
 const btn = document.querySelector(".myInfo__btn");
 const modal = document.querySelector(".modal");
 const modalContainer = document.querySelector(".modal__container");
@@ -18,6 +19,8 @@ btn.addEventListener("click", function() {
 modalInput.addEventListener("change", function(e){
     console.log(e.target.value)
 })
+
+// ===========================MODAL WINDOW FOR IMG==============================
 
 const boxPlus = document.querySelectorAll(".box__plus");
 const arrPlus = Array.from(boxPlus);
@@ -56,10 +59,18 @@ modaltwo.addEventListener("mouseup", function(event) {
     }
 });
 
+
 for(let i = 0; i <= objImgs.length; i++){
-    +i ;
-    arrPlus[i].addEventListener("click", function() {
+    const item = +i ;
+    arrPlus[item].addEventListener("click", function() {
         modaltwo.style.display = "block";
-        modalImg.src = objImgs[i].src
+        modalImg.src = objImgs[item].src
     })
 }
+// ----------------CLOSE MODAL WINDOW, ESC------------------------------------------------------------------------------------------------------------------------------
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+    modaltwo.style.display = "none";
+    modal.style.display = "none";
+    }
+    });
