@@ -6,18 +6,18 @@ const modalBtn = document.querySelector(".modal__btn");
 const modalInput = document.querySelector(".modal__inputs");
 
 modal.addEventListener("mouseup", function(event) {
-    if (!modalContainer.contains(event.target)) {
-        modal.style.display = "none";
-    }
+  if (!modalContainer.contains(event.target)) {
+    modal.style.display = "none";
+  }
 });
 
 btn.addEventListener("click", function() {
-    modal.style.display = "block";
+  modal.style.display = "block";
 });
 
 
 modalInput.addEventListener("change", function(e){
-    console.log(e.target.value)
+  console.log(e.target.value)
 })
 
 // ===========================MODAL WINDOW FOR IMG==============================
@@ -26,51 +26,27 @@ const boxPlus = document.querySelectorAll(".box__plus");
 const arrPlus = Array.from(boxPlus);
 const modaltwo = document.querySelector(".modal__two")
 const modalImg = document.querySelector(".modal__img")
-const objImgs = [
-    {
-        src: "./asset/portfolio__img-1.png",
-    },
-    {
-        src: "./asset/portfolio__img-2.png",
-    },
-    {
-        src: "./asset/portfolio__img-3.png",
-    },
-    {
-        src: "./asset/portfolio__img-4.png",
-    },
-    {
-        src: "./asset/portfolio__img-5.png",
-    },
-    {
-        src: "./asset/portfolio__img-6.png",
-    },
-    {
-        src: "./asset/portfolio__img-7.png",
-    },
-    {
-        src: "./asset/sorry.jpg",
-    },
-];
+const boxImg = document.querySelectorAll(".box__img")
+const boxImgs = Array.from(boxImg)
 
 modaltwo.addEventListener("mouseup", function(event) {
-    if (!modalImg.contains(event.target)) {
-        modaltwo.style.display = "none";
-    }
+  if (!modalImg.contains(event.target)) {
+    modaltwo.style.display = "none";
+  }
 });
 
-
-for(let i = 0; i <= objImgs.length; i++){
+for(let i = 0; i <= boxImgs.length; i++){
     const item = +i ;
     arrPlus[item].addEventListener("click", function() {
         modaltwo.style.display = "block";
-        modalImg.src = objImgs[item].src
-    })
-}
+        modalImg.src = boxImgs[item].src
+    }
+)}
+
 // ----------------CLOSE MODAL WINDOW, ESC------------------------------------------------------------------------------------------------------------------------------
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-    modaltwo.style.display = "none";
-    modal.style.display = "none";
-    }
-    });
+  if (e.key === 'Escape') {
+  modaltwo.style.display = "none";
+  modal.style.display = "none";
+  }
+});
